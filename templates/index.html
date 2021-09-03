@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2.El</title>
+
+</head>
+<body>
+  <p>Toplam ilan sayısı: {{advert}}</p>
+  <form action="/" method="post">
+<div style="border: 1px solid;margin:50px 10px;width: 200px;height: 400px;overflow-y: scroll;float: left;">
+  <ul>
+    {% for list_count in list_count %}
+ 
+    <li style="list-style-type: none;"><input type="checkbox" name="{{ checkbox_value[list_count] }}" id="{{ checkbox_value[list_count] }}" value="{{ checkbox_value[list_count] }}">
+
+    <label for="{{ checkbox_value[list_count] }}">{{ cty_list[list_count] }}</label> 
+
+    
+    {% endfor %}
+
+  </ul>
+</div>
+  <div style="width: 250px;float: left;margin:50px 10px">
+    <label>Fiyat</label>
+    <br>
+    <br>
+    <label for="min_tl">Minumum TL<input type="text" name="min_tl"></label>
+    <br>
+    <br>
+    <label for="min_tl">Maximum TL<input type="text" name="max_tl"></label>
+
+</div>
+  <div style="width: 250px;float: left;margin:50px 10px">
+  <label>Yıl</label>
+  <br>
+  <br>
+  <label for="min_yıl">Minumum Yıl<input type="text" name="min_yıl"></label>
+  <br>
+  <br>
+  <label for="min_yıl">Maximum Yıl<input type="text" name="max_yıl"></label>
+  <br>
+  <br>
+  <input type="submit"width="50px">
+</div>
+
+</form>
+<br>
+<br>
+<br>
+
+<div style="display:block;">
+{%for count in count%}
+
+<div style="border:1px solid #000;width:300px;display: inline-block;height: 300px;">
+<a href="https://www.arabam.com{{ arabam_a[count] }}"><img src="{{arabam_img[count]}}" width="150px" style="margin-left:50px"></a>
+<ul>
+{% for data in a_text[count] %}
+
+  <li>{{ data}}</li>
+
+
+{% endfor%}
+   <li>Arabam.com<li>
+</ul>
+</div> 
+<div style="border: 1px solid #000;display: inline-block;">
+  <a href="https://www.sahibinden.com{{s_href[count]}}"><img src="{{s_img[count]}}"></a>
+  <ul>
+    {%for s_text in s_data[count]%}
+    <li>{{s_text}}</li>
+
+    {% endfor %}
+  <li>sahibinden <li>
+  </ul>
+
+</div>
+{%endfor%}
+</div>
+
+  <div>
+    {% for a in counts %}
+      <div style="border:1px solid #000;width:300px;display: inline-block;height: 300px;">
+        <a href="https://www.letgo.com{{letgo_a[a]}}" target="_blank"><img src="{{l_img[a]}}" class="margin-left:50px" width="150px"></a>
+        <ul>
+          {% for letgo_text in l_text[a] %}
+          <li>{{ letgo_text }}</li>
+      
+          {% endfor %}
+        <li>letgo <li>
+        </ul>
+    
+      </div>
+      {% endfor %}
+      </div>
+    
+
+
+
+</body>
+</html>
